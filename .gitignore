@@ -1,0 +1,12 @@
+# Keep this repository limited to the app source and documentation.
+# Local configuration, logs, old binaries, build output, and backups stay local.
+/*
+!/.gitignore
+!/README.md
+!/PhoneLock.swift
+!/UnlockSupport.swift
+!/DeviceSettings.swift
+!/BluetoothConnectionWorker.swift
+!/Distribution-Info.plist
+!/build-shareable.sh
+!/SHARING.txt

@@ -1,0 +1,76 @@
+PHONE PROXIMITY LOCK 0.2.1
+
+Requirements
+macOS 13 or later. The app includes Apple silicon and Intel executables.
+Bluetooth must be enabled on the Mac and selected device.
+Tested on one Apple silicon Mac. Intel execution and other macOS versions
+have not been tested here; pilot with one colleague before broader use.
+
+Install and choose a device
+1. Unzip this package and move Phone Proximity Lock.app to Applications.
+2. Open the app. It lives in the menu bar as Phone Lock.
+3. In Settings & devices, choose a device from the paired-device list and
+   click Use selected device. This starts automatic locking.
+4. If the device is not paired yet, use Pair a new device. Make the phone
+   discoverable in its Bluetooth settings and confirm matching codes on
+   both devices. You can also pair in macOS Bluetooth settings and click
+   Refresh in Phone Lock.
+5. Optionally enable Start Phone Lock when I log in.
+
+Automatic unlocking is OPTIONAL and OFF on a fresh installation.
+The app can be used for locking only without saving a password.
+To enable unlocking, select its checkbox in Settings & devices. Grant
+Accessibility access (called Device Control and Data Access on newer
+macOS versions), then enter your own Mac login password in the secure
+local prompt. The password is checked locally and stored in your login
+Keychain; it is not sent anywhere or written to a settings file.
+The setup offers a lock/unlock test. Leave the keyboard and Touch ID
+alone for that test, then unlock manually if needed.
+
+Defaults
+- Lock after 20 seconds of disconnection.
+- If enabled, unlock after a stable 1-second reconnection.
+- Only locks made by this app can be automatically unlocked.
+- Manual locks, first login after restart, and logins after logging out
+  stay manual.
+- Choosing a DIFFERENT device switches automatic unlocking off again.
+- Normal system sleep is unchanged. The app does not keep the Mac awake.
+  Detection resumes once the Mac wakes; it cannot poll Bluetooth while
+  the Mac is asleep.
+
+Bluetooth range varies and can reach beyond the room. Devices that do
+not maintain a connection, including some watches, are unsuitable as a
+lock trigger. Test your device's disconnect/reconnect behavior first.
+The app uses a fresh, authenticated Bluetooth worker for each connection
+and restarts a stalled worker rather than waiting indefinitely for a
+callback from the previous connection.
+
+Pause or change settings
+Use Phone Lock in the menu bar, or reopen the app to show Settings &
+devices. You can pause locking/automation, pause automatic unlocking,
+change delays, select another device, or remove the saved unlock password.
+Your settings and bounded activity log live in your own account under
+~/Library/Application Support/Phone Proximity Lock/.
+Each Mac has its own configuration and Keychain entry. The distributed
+package contains no selected device, account settings, logs, or passwords.
+
+Opening this local prototype
+This package is locally signed, not Developer ID signed or notarized.
+macOS or company device-management policy may block its first launch.
+Use your organization's approval process. Apple describes the relevant
+per-app Open Anyway flow here:
+https://support.apple.com/en-us/102445
+Do not disable Gatekeeper globally. For a normal company-wide release,
+arrange Developer ID signing and Apple notarization with your developer/IT
+team. Permission grants may need refreshing after a locally signed update.
+
+Upgrading the original local version
+Quit the existing Phone Lock before opening this version. It can import
+the original account's device and delay settings when present. Automatic
+unlocking is paused on migration so the new build can be authorized.
+The existing saved password stays in that account's Keychain.
+
+Uninstall
+In the app, turn off Start Phone Lock when I log in and optionally remove
+the saved unlock password. Quit Phone Lock, then move the app to Trash.
+You may also remove its own Application Support folder if no longer needed.

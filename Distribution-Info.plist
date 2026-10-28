@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0"><dict>
+<key>CFBundleExecutable</key><string>PhoneLock</string>
+<key>CFBundleIdentifier</key><string>local.phoneproximity.lock</string>
+<key>CFBundleName</key><string>Phone Proximity Lock</string>
+<key>CFBundleDisplayName</key><string>Phone Proximity Lock</string>
+<key>CFBundleVersion</key><string>3</string>
+<key>CFBundleShortVersionString</key><string>0.2.1</string>
+<key>CFBundlePackageType</key><string>APPL</string>
+<key>LSMinimumSystemVersion</key><string>13.0</string>
+<key>LSUIElement</key><true/>
+<key>NSBluetoothAlwaysUsageDescription</key><string>List paired Bluetooth devices and monitor the device you choose to lock your Mac when it disconnects. No phone content is accessed.</string>
+<key>NSHumanReadableCopyright</key><string>Local prototype. Automatic unlocking is optional.</string>
+</dict></plist>
